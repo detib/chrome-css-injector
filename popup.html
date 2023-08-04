@@ -3,10 +3,63 @@
 <head>
   <title>CSS Injector</title>
   <script src="popup.js"></script>
+  <style>
+    .btn.btn-outline-secondary {
+      color: #6c757d;
+      border-color: #6c757d;
+      background-color: transparent;
+    }
+
+    .btn.btn-outline-secondary:hover {
+      color: #fff;
+      background-color: #6c757d;
+    }
+
+    .button-icon {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .button-icon button {
+      margin-right: 10px;
+    }
+
+    .button-icon a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-icon a img {
+      margin: 0;
+    }
+
+    .button-icon a:hover {
+      text-decoration: none;
+    }
+
+    .button-icon a:focus, .button-icon a.focus {
+      text-decoration: none;
+    }
+
+    .button-icon a:active, .button-icon a.active {
+      text-decoration: none;
+    }
+
+    .button-icon a.disabled, .button-icon a:disabled {
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-  <h2>Inject Custom CSS</h2>
-  <textarea cols="75" rows="20" id="cssRulesInput" placeholder="Enter CSS rules"></textarea>
-  <button id="injectButton">Inject</button>
+  <div class="button-icon">
+    <h2>Inject Custom CSS</h2>
+    <a href="https://github.com/detib/chrome-css-injector" target="_blank" class="btn btn-outline-secondary">
+      <img style="display: block;" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="32" alt="GitHub">
+    </a>
+  </div>
+  <textarea cols="75" rows="20" id="cssRulesInput" placeholder="Enter CSS rules" style="resize: vertical;"></textarea>
+  <button id="injectButton">Save</button>
 </body>
 </html>
