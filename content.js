@@ -5,10 +5,8 @@ const url = window.location.hostname;
 chrome.storage.local.get([url], function (result) {
   const cssRules = result[url];
   if (cssRules) {
-    console.log(`Found existing rules for ${url}: ${cssRules}`);
-    // chrome.tabs.executeScript(activeTab.id, {
-    //   code: "const style = document.createElement('style'); " + 'style.textContent = `' + cssRules + '`; ' + 'document.head.appendChild(style);',
-    // });
+    console.log(`Found existing rules for ${url}: \n ${cssRules}`);
+    
     const style = document.createElement('style'); 
     style.textContent = cssRules;
     document.head.appendChild(style);

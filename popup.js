@@ -27,11 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
       data[url] = cssRules;
       chrome.storage.local.set(data);
 
-      // Inject the CSS rules into the current tab
-      chrome.tabs.executeScript(activeTab.id, {
-        code: "const style = document.createElement('style'); " +
-                "style.textContent = `" + cssRules + "`; " +
-                "document.head.appendChild(style);",
+      // Inject the CSS rules into the active tab
+      chrome.tabs.insertCSS(activeTab.id, {
+        code: cssRules,
       });
     });
   });
